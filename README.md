@@ -50,3 +50,11 @@ For a transaction with a test card number you should use the following numbers t
 4242 4242 4242 4242 for an approved transaction (APPROVED). Any future expiry date and 3 digit CVC is valid.
 4111 1111 1111 1111 for a declined transaction (DECLINED). Any future expiry date and 3 digit CVC is valid.
 If you use any other card that is not one of the aforementioned ones, the final state of you transaction will be ERROR.
+
+
+## HOURS SPENT ON PROJECT 10
+to dedicate a maximum of 25 working hours
+
+## Database
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo systemctl start postgresql
