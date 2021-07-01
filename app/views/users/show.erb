@@ -1,0 +1,18 @@
+<h2><%=selected_user.username%>'s Recipes</h2>
+<%selected_user.recipes.each do |r|%>
+<h3><a href="/recipes/<%=r.id%>"><%=r.name%></a></h3>
+Total prep time: <%=r.total_prep_time%><br/>
+<%end%>
+
+
+<form>
+  <script
+    src="https://checkout.wompi.co/widget.js"
+    data-render="button"
+    data-public-key="pub_test_qNOFHwVSZ4MTh2GLOaWaeUqkGMS4aKvY"
+    data-currency="COP"
+    data-amount-in-cents="4950000"
+    data-reference="4XMPGKWWPKWQ"
+    >
+  </script>
+</form>

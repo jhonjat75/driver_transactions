@@ -26,3 +26,27 @@ install wompi
 
 to carry out the tests it is necessary to execute the following commands:
 `gem install sinatra`
+
+
+# links help me
+- https://x-team.com/blog/how-to-create-a-ruby-api-with-sinatra/
+- http://sinatrarb.com/intro.html
+- https://rubydoc.info/gems/sinatra#custom-route-matchers
+- https://learn.co/lessons/sinatra-multiple-controllers
+
+#Manager
+This Sinatra MVC web app allows users to create
+
+## Installation
+1. Clone this repo
+2. Run `bundle install` to install any dependencies.
+3. Run `rake db:migrate` to set up the database.
+4. Run `shotgun config.ru`
+
+
+## Cards test
+For a transaction with a test card number you should use the following numbers to obtain different responses:
+
+4242 4242 4242 4242 for an approved transaction (APPROVED). Any future expiry date and 3 digit CVC is valid.
+4111 1111 1111 1111 for a declined transaction (DECLINED). Any future expiry date and 3 digit CVC is valid.
+If you use any other card that is not one of the aforementioned ones, the final state of you transaction will be ERROR.
