@@ -1,9 +1,11 @@
 development:
   adapter: postgresql
-  encoding: unicode
-  database: database-driver-dev
+  encoding: UTF-8
+  username: driverproject
+  password: password123qwe
+  database: database_driver_dev
+  host: localhost
   pool: 5
-  timeout: 5000
 
 test:
   adapter: postgresql

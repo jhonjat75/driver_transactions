@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'activerecord', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'activerecord'
+gem 'sinatra-activerecord'
 gem 'rake'
 gem 'require_all'
 gem 'thin'
@@ -12,7 +12,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
-gem 'pg', '~> 0.18.4'
+gem 'pg'
 
 group :test do
   gem 'rspec'

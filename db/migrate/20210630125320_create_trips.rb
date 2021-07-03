@@ -1,4 +1,4 @@
-class CreateTrips < ActiveRecord::Migration[5.2]
+class CreateTrips < ActiveRecord::Migration[6.1]
   def change
     create_table :trips do |t|
       t.integer :driver_id
