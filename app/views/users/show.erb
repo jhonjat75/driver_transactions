@@ -1,9 +1,7 @@
-<h2><%=selected_user.username%>'s Recipes</h2>
-<%selected_user.recipes.each do |r|%>
-<h3><a href="/recipes/<%=r.id%>"><%=r.name%></a></h3>
-Total prep time: <%=r.total_prep_time%><br/>
-<%end%>
-
+<h1>Soy un Usuario</h1>
+<div id="app">
+  {{ message }}
+</div>
 
 <form>
   <script
@@ -16,3 +14,12 @@ Total prep time: <%=r.total_prep_time%><br/>
     >
   </script>
 </form>
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hola Vue!'
+    }
+  })
+
+</script>

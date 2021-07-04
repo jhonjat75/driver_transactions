@@ -53,7 +53,7 @@ For a transaction with a test card number you should use the following numbers t
 If you use any other card that is not one of the aforementioned ones, the final state of you transaction will be ERROR.
 
 
-## HOURS SPENT ON PROJECT 10
+## HOURS SPENT ON PROJECT 18
 to dedicate a maximum of 25 working hours
 
 ## Database

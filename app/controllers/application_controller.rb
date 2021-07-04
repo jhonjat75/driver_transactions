@@ -9,7 +9,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    redirect to '/trips'
+    redirect_if_not_logged_in
+    @current_user ||= User.find(session[:user_id])
+    redirect to "/users/#{@current_user.id}"
+
   end
 
 

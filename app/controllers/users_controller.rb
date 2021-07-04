@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if logged_in?
-      redirect to '/recipes'
+      redirect to '/trips'
     else
       erb :"users/signup"
     end
@@ -18,13 +18,14 @@ class UsersController < ApplicationController
     else
       user = User.create(:username => params[:username], :email => params[:email], :password => params[:password])
       session[:user_id] = user.id
-      redirect to '/recipes'
+      redirect to "/users/#{user.id}"
     end
   end
 
   get '/login' do
     if logged_in?
-      redirect to '/recipes'
+      @current_user ||= User.find(session[:user_id])
+      redirect to "/users/#{@current_user.id}"
     else
       erb :"users/login"
     end
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
       user = User.find_by(:username => params[:username])
       if !!user && !!user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect to '/recipes'
+        redirect to "/users/#{user.id}"
       else
         flash[:alert] = "We were unable to find an account with those credentials."
         redirect to '/login'
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
       erb :"users/show"
     else
       flash[:alert] = "That user does not exist, try selecting a different user."
-      redirect to '/recipes'
+      redirect to '/trips'
     end
   end
 
