@@ -1,0 +1,13 @@
+<h1>New trip</h1>
+
+<form action="/trips/create" method="post">
+Driver: <select name="driver_id">
+    <% @drivers.each do |driver| %>
+      <option value="<%=driver.id%>" ><%= driver.username %></option>
+    <% end %>
+</select> <br>
+Longitude: <input type="number" name="long_start" step="0.01"> <br>
+Latitude: <input type="number" name="lat_start" step="0.01"> <br>
+<input name="rider_id" type="hidden" value="<%=@user.id %>">
+<input type="submit" value="Start">
+</form>

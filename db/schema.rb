@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(version: 2021_06_30_125330) do
   create_table "trips", force: :cascade do |t|
     t.integer "driver_id"
     t.integer "rider_id"
+    t.float "long_start"
+    t.float "lat_start"
+    t.float "long_final"
+    t.float "lat_final"
+    t.integer "distance"
+    t.integer "time"
+    t.integer "price"
+    t.string "pay_reference"
+    t.string "wompi_reference"
+    t.boolean "pay"
+    t.boolean "stop"
+
   end
 
   create_table "users", force: :cascade do |t|

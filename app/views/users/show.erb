@@ -1,9 +1,79 @@
-<h1>Soy un Usuario</h1>
-<div id="app">
-  {{ message }}
-</div>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-<form>
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<h1><%= @user.username.capitalize%>'s trips</h1>
+<% if @user.role=="rider" then%>
+<a href=<%= "/trips/new?user_id=#{@user.id}"%>>new trip</a>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Rider</th>
+      <th>Driver</th>
+      <th>Long init</th>
+      <th>Lat init</th>
+      <th>Time</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td><%= trip.rider.username %></td>
+      <td><%= trip.driver.username %></td>
+      <td><%= trip.long_start %></td>
+      <td><%= trip.lat_start %></td>
+      <td><%= trip.time %></td>
+      <td><%= trip.price %></td>
+      <% if @user.role=="rider" then %>
+        <% if trip.stop && !trip.pay then %>
+        <td>
+          <script
+              src="https://checkout.wompi.co/widget.js"
+              data-render="button"
+              data-public-key="pub_test_qNOFHwVSZ4MTh2GLOaWaeUqkGMS4aKvY"
+              data-currency="COP"
+              data-amount-in-cents="<%=trip.price%>00"
+              data-reference="<%=trip.pay_reference%>"
+              data-redirect-url="http://127.0.0.1:9393/check/<%=trip.pay_reference%>"
+              >
+            </script>
+        </td>
+        <% else %>
+        <td></td>
+        <% end %>
+      <% else %>
+        <% if !trip.stop then %>
+        <td><a href="<%= "/trips/end/#{trip.id}" %>">End trip</a></td>
+        <% else %>
+        <td></td>
+        <% end %>
+      <% end %>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+
+
+
+<!-- <form>
   <script
     src="https://checkout.wompi.co/widget.js"
     data-render="button"
@@ -14,6 +84,9 @@
     >
   </script>
 </form>
+<div id="app">
+  {{ message }}
+</div>
 <script type="text/javascript">
   var app = new Vue({
     el: '#app',
@@ -22,4 +95,4 @@
     }
   })
 
-</script>
+</script> -->

@@ -54,6 +54,13 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     if !!selected_user
+      @user=User.find(params[:id])
+      if @user.role=="rider" then
+        @trips=@user.rider_trips
+      else
+        @trips=@user.driver_trips
+      end
+
       erb :"users/show"
     else
       flash[:alert] = "That user does not exist, try selecting a different user."

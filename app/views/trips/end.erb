@@ -1,0 +1,9 @@
+<h1>End Trip</h1>
+
+<form action="/trips/endtrip" method="post">
+Longitude: <input type="number" name="long_final" step="0.01"> <br>
+Latitude: <input type="number" name="lat_final" step="0.01"> <br>
+Time: <input type="number" name="time"> <br>
+<input name="trip_id" type="hidden" value="<%=@trip.id %>">
+<input type="submit" value="Finish">
+</form>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>trip with umbrella</title>
+    <title>trips</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -15,8 +15,8 @@
 
     <a href="/logout">Log out</a>
     <div class="jumbotron text-center">
-      <h1>My First Bootstrap Page</h1>
-      <p>Resize this responsive page to see the effect!</p>
+      <h1>Trip Page</h1>
+      <p>Enjoy the best trips with us!</p>
     </div>
     <% flash.keys.each do |type| %>
       <div data-alert class="flash <%= type %> alert-box radius">
@@ -26,7 +26,6 @@
     <% end %>
 
     <div class="container">
-      <h1>My Super App</h1>
 
       <%= yield %>
     </div>
