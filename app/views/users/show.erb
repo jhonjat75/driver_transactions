@@ -40,10 +40,11 @@ tr:nth-child(even) {
       <th>Time</th>
       <th>Price</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @trips.each do |trip| %>
+    <% @trips.reverse.each do |trip| %>
     <tr>
       <td><%= trip.rider.username %></td>
       <td><%= trip.driver.username %></td>
@@ -51,6 +52,7 @@ tr:nth-child(even) {
       <td><%= trip.lat_start %></td>
       <td><%= trip.time %></td>
       <td><%= trip.price %></td>
+      <td><a href="<%= "/trips/#{trip.id}" %>">Open</a></td>
       <% if @user.role=="rider" then %>
         <% if trip.stop && !trip.pay then %>
         <td>

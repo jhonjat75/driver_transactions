@@ -1,2 +1,14 @@
 <a href="/">Home</a>
-<h1>Hi</h1>
+<h1>Trip</h1>
+<strong>Rider: </strong><%= @trip.rider.username %><br>
+<strong>Driver: </strong><%= @trip.driver.username %><br>
+<strong>Stop: </strong><%= @trip.stop %><br>
+<strong>Longitude start: </strong><%= @trip.long_start %><br>
+<strong>Latitude start: </strong><%= @trip.lat_start %><br>
+<strong>Longitude final: </strong><%= @trip.long_final %><br>
+<strong>Latitude final: </strong><%= @trip.lat_final %><br>
+<strong>Time(minutes): </strong><%= @trip.time %><br>
+<strong>Distance(Km): </strong><%= @trip.distance %><br>
+<strong>Reference: </strong><%= @trip.pay_reference %><br>
+<strong>Price(COP): </strong><%= @trip.price %><br>
+<strong>Pay: </strong><%= @trip.pay %><br>

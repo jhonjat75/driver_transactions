@@ -6,8 +6,8 @@ Driver: <select name="driver_id">
       <option value="<%=driver.id%>" ><%= driver.username %></option>
     <% end %>
 </select> <br>
-Longitude: <input type="number" name="long_start" step="0.01"> <br>
-Latitude: <input type="number" name="lat_start" step="0.01"> <br>
-<input name="rider_id" type="hidden" value="<%=@user.id %>">
+Longitude: <input type="number" name="long_start" step="0.00001" required> <br>
+Latitude: <input type="number" name="lat_start" step="0.00001" required> <br>
+<input name="rider_id" type="hidden" step="0.00001" value="<%=@user.id %>">
 <input type="submit" value="Start">
 </form>
