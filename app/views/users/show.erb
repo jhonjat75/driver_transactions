@@ -46,11 +46,11 @@ tr:nth-child(even) {
           <script
               src="https://checkout.wompi.co/widget.js"
               data-render="button"
-              data-public-key="pub_test_qNOFHwVSZ4MTh2GLOaWaeUqkGMS4aKvY"
+              data-public-key="<%=ENV['PUBLIC_KEY']%>"
               data-currency="COP"
               data-amount-in-cents="<%=trip.price%>00"
               data-reference="<%=trip.pay_reference%>"
-              data-redirect-url="http://127.0.0.1:9393/check/<%=trip.pay_reference%>"
+              data-redirect-url="<%=ENV['REDIRECT_URL']%><%=trip.pay_reference%>"
               >
             </script>
         </td>
