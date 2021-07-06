@@ -1,15 +1,62 @@
-<style>
-div {
-  background-image: url('/images/city.png');
-}
-</style>
-<section>
+<section class="loginsection">
+  <div class="login">
+    <form action='/login' method='post'>
+      <label><b>User Name</b></label>
+      <input type='text' name='username' id="username" placeholder="Username" required>
+      <label><b>Password</b></label>
+      <input type='password' name='password' id="password" placeholder="Password" required>
+      <br>
+      <input type='submit' value='Log In Here' id='submit'>
+    </form>
+  </div>
 
 </section>
 
+<style media="screen">
+  .loginsection{
+    margin: 10%;
+    padding: 0;
+    /* background-color:#6abadeba; */
+    font-family: 'Arial';
+  }
+  label{
+    /* color: #08ffd1; */
+    font-size: 17px;
+  }
+  .login{
+    width: 430px;
+    overflow: hidden;
+    margin: auto;
+    padding: 50px;
 
-<form action='/login' method='post'>
-  <p><label for='username'>Username: </label><input type='text' name='username'></p>
-  <p><label for='password'>Password: </label><input type='password' name='password'></p>
-  <input type='submit' value='Submit' id='submit'>
-</form>
+    background-color: rgba(192,192,192,.8);
+    border-radius: 15px ;
+
+  }
+
+  #username{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+  }
+  #password{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+  }
+  #submit{
+    margin-top: 20px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+  }
+body {
+  background-image: url("/images/city.png");
+}
+</style>

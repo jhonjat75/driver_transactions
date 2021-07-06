@@ -15,6 +15,17 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
+<a href="/logout">Log out</a>
+<div class="jumbotron text-center">
+  <h1>Trip Page</h1>
+  <p>Enjoy the best trips with us!</p>
+</div>
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
 <h1><%= @user.username.capitalize%>'s trips</h1>
 <% if @user.role=="rider" then%>
 <a href=<%= "/trips/new?user_id=#{@user.id}"%>>new trip</a>
